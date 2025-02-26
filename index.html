@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-teal-400 text-white p-4">
+       <!--nav bar-->
+       <nav class="bg text-white fixed px-4 py-6 flex justify-between items-center top-0 left-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="hidden md:flex space-x-6 font-bold" style="font-family: 'Merienda', serif;">
+                
+                    <a href="#home" class="text-black hover:text-yellow-400 px-2">Home</a>
+                    <a href="#tech" class="text-black hover:text-yellow-400">Tech events</a>
+            
+            </div>
+
+              <!-- Mobile Menu Button -->
+              <button  id="menu-btn" class="block md:hidden text-white focus:outline-none ">
+                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!--mobile menu-->
+
+        <div id="mobile-menu" class="fixed top-0 right-0 w- h-full bg-white text-black transform translate-x-full transition-transform duration-300 ease-in-out p-6">
+            <button id="close-menu" class="absolute top-4 right-4 text-black hover:cursor-pointer text-2xl">&times;</button>
+            <ul class="mt-10 space-y-6 font-bold" style="font-family: 'Merienda', serif;">
+            
+            <a href="#home" class="block text-lg hover:text-yellow-400 hover:cursor-pointer">Home</a>
+            <a href="#tech" id="technical" class="block text-lg hover:text-yellow-400 hover:cursor-pointe">Tech events</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn=document.getElementById('menu-btn');
+        const mobileMenu=document.getElementById('mobile-menu');
+        const closeMenu=document.getElementById('close-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    </script>
+    <!--hero section-->
+
+    <div id="home" class="h-screen flex flex-col justify-center items-center text-white px-4">
+        <div class="max-w-xl -mt-12">
+            <h2 class="text-4xl text-yellow-400 md:text-6xl font-bold mb-6" style="font-size: 7vh; font-family: 'Yesteryear', serif;">Eclipse'25</h2>
+            <p class=" md:text-xl mb-8" style="font-size: 3vh; font-family:'serif'">An electrifying event where talent meets opportunity. Showcase <br>your skills, challenge your limits, and rise above the rest. <br>Get ready to shine and make your mark! 🚀</p>
+        </div>
+
+        <div>
+           <button id="registerBtn" class="hover:cursor-pointer hover:text-black bg-yellow-600 text-white text-sm px-5 py-3 rounded-lg shadow-md hover:bg-yellow-400 shadow-lg transition-shadow">Register now</button>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById("registerBtn").addEventListener("click", function () {
+            document.getElementById("tech").scrollIntoView({ behavior: "smooth" });
+        });
+        </script>
+        
+    <!--tech eve-->
+    <div id="tech" class="min-h-screen flex flex-col items-center justify-center w-full">
+        <h1 class="text-2xl font-bold text-white mb-6">Technical Events</h1>
+
+        <p>(click on the icons to know more)</p>
+    
+        <div class="flex flex-wrap justify-center items-center gap-6 w-full max-w-screen-lg mx-auto" style="font-family: 'Merienda', serif;">
+            
+            <!--img1-->
+            <div class="flex flex-col items-center">
+                <img src="https://ik.imagekit.io/lo88q1hoai/assets/IMG_20250221_213932.jpg?updatedAt=1740158244044" alt="Event 1" onclick="openPDF('https://ik.imagekit.io/lo88q1hoai/assets/NIRALAKKAM.pdf?updatedAt=1740588414987')" class="cursor-pointer w-64 h-64 object-contain rounded-lg"
+                style="cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; margin-top: 5vh;"
+                onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0px 4px 10px rgba(0, 0, 0, 0.3)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                <p class="text-2xl text-white mt-2" style="padding: 20px;">Niralakkam</p>
+            </div>
+            
+             <!--img2-->
+            <div class="flex flex-col items-center">
+                <img src="https://ik.imagekit.io/lo88q1hoai/assets/IMG_20250221_213905.jpg?updatedAt=1740158243932" alt="Event 2" onclick="openPDF('https://ik.imagekit.io/lo88q1hoai/assets/web%20devXperiencee.pdf?updatedAt=1740588409955')" class="w-64 h-64 object-contain rounded-lg"
+                style="cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; margin-top: 5vh;""
+                onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0px 4px 10px rgba(0, 0, 0, 0.3)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                <p class="text-2xl text-white mt-2" style="padding: 20px;">Web devXperience</p>
+            </div>
+            
+             <!--img3-->
+            <div class="flex flex-col items-center">
+                <img src="https://ik.imagekit.io/lo88q1hoai/assets/file-BZYY24MnEfqVJufxqZMSv2.webp?updatedAt=1740158243055" alt="Event 3" onclick="openPDF('https://ik.imagekit.io/lo88q1hoai/assets/bugsquash-2.pdf?updatedAt=1740588411555')" class="w-64 h-64 object-contain rounded-lg"
+                style="cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; margin-top: 5vh;""
+                onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0px 4px 10px rgba(0, 0, 0, 0.3)';"
+                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+                <p class="text-2xl text-white mt-2" style="padding: 20px;">BugSquash</p>
+            </div>
+    
+        </div>
+    </div>
+
+    <!--for script-->
+    <script>
+    
+        function openPDF(pdfUrl) {
+            window.open(pdfUrl, '_blank');
+        }
+
+        function openPDF(pdfUrl) {
+            window.open(pdfUrl, '_blank');
+        }
+    
+    
+        function openPDF(pdfUrl) {
+            window.open(pdfUrl, '_blank');
+        }
+    </script>
+   
+
+   <!--rules-->
+   <div class="relative w-full max-w-3xl p-8 text-white text-center rounded-lg shadow-lg backdrop-blur-lg" 
+   style=" margin-top: 20px; padding-top: 4vh; background: linear-gradient(to right, rgba(30, 58, 138, 0.7), rgba(147, 51, 234, 0.7)); ">
+    <!-- Rules Content -->
+    <div class="relative z-10">
+        <h2 class="text-2xl font-bold mb-4">Event Guidelines & Instructions
+        </h2>
+        <ul class="space-y-3 text-lg">
+            <li>✔️ Participation certificates will be provided to all participants.</li>
+            <li>✔️ Use of any AI tools will lead to disqualification</li>
+            <li>✔️ Except BugSquash, other events are individual participation.</li>
+            <li>✔️ Use of mobile phones is not allowed during the event.</li>
+          
+            <li>✔️ Any form of malpractice will lead to disqualification.</li>
+        </ul>
+    </div>
+    
+    <footer class="w-full bg-gray-900 text-white text-center" style="padding: 4vh 0 4vh 0; margin-top: 50px; background-color: gray;">
+        <p class="text-lg font-semibold">📅 Date: 04 March 2025 <br>⏰ Time: 9.30 am onwards</p>
+        <p class="mt-2 text-sm opacity-80">Join us and be part of the excitement at <strong>ECLIPSE'25</strong>! 🚀</p>
+    </footer>
+
+</body>
+</html>
